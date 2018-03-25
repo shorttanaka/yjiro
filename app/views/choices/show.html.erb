@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>詳細</h1>
+    <dl>
+      <dt>選択肢A</dt>
+      <dd style="margin:0px 0px 10px 20px"><%= @choice.choice_a %></dd>
+      <dt>選択肢B</dt>
+      <dd style="margin:0px 0px 10px 20px"><%= @choice.choice_b %></dd>
+      <dt>答え</dt>
+      <dd style="margin:0px 0px 10px 20px"><%= @choice.answer %></dd>
+    </dl>
+    <%= link_to '編集', edit_choice_path(@choice), class: "btn btn-default" %>
+    <%= link_to '戻る', choices_path, class: "btn btn-default" %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>これまでの選択は...</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <p>今までの選択肢とそれに対する選択が表示されます。</p>
+  </div>
+  <div class="col-lg-6">
+    <%= link_to '何か迷ってる?', new_choice_path, class: "btn btn-default pull-right" %>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <th>選択肢1</th>
+      <th>選択肢2</th>
+      <th>回答</th>
+      <th>リンク</th>
+    </thead>
+    <tbody>
+      <% @choice.each do |choice| %>
+        <tr>
+          <td><%= choice.choice_a %></td>
+          <td><%= choice.choice_b %></td>
+          <td><%= choice.answer %></td>
+          <td><%= link_to '回顧', choice, class: "btn btn-default btn-xs" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
