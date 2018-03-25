@@ -115,11 +115,11 @@ class Module
   # Similarly, if the parent class changes the value, the value of subclasses
   # is not changed.
   #
-  #   class Customer < Account
+  #   class Choice < Account
   #   end
   #
-  #   Customer.user = "Rafael"
-  #   Customer.user # => "Rafael"
+  #   Choice.user = "Rafael"
+  #   Choice.user # => "Rafael"
   #   Account.user  # => "DHH"
   #
   # To opt out of the instance writer method, pass <tt>instance_writer: false</tt>.

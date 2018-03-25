@@ -55,7 +55,7 @@ module ActiveRecord
     # The use of this method should be restricted to complicated SQL queries that can't be executed
     # using the ActiveRecord::Calculations class methods. Look into those before using this.
     #
-    #   Product.count_by_sql "SELECT COUNT(*) FROM sales s, customers c WHERE s.customer_id = c.id"
+    #   Product.count_by_sql "SELECT COUNT(*) FROM sales s, choices c WHERE s.choice_id = c.id"
     #   # => 12
     #
     # ==== Parameters

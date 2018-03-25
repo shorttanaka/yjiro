@@ -309,12 +309,12 @@
 
     Before:
 
-        2.weeks.since(customer_start_date)
+        2.weeks.since(choice_start_date)
         5.days.until(today)
 
     After:
 
-        2.weeks.after(customer_start_date)
+        2.weeks.after(choice_start_date)
         5.days.before(today)
 
     *Nick Johnstone*
@@ -563,11 +563,11 @@
           thread_mattr_accessor :user
         end
 
-        class Customer < Account
+        class Choice < Account
         end
 
         Account.user = "DHH"
-        Customer.user = "Rafael"
+        Choice.user = "Rafael"
 
     Before:
 

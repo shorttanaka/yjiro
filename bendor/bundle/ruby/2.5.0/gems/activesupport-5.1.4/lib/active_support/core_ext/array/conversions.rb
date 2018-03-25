@@ -113,19 +113,19 @@ class Array
   # The root node reflects the class name of the first element in plural
   # if all elements belong to the same type and that's not Hash:
   #
-  #   customer.projects.to_xml
+  #   choice.projects.to_xml
   #
   #   <?xml version="1.0" encoding="UTF-8"?>
   #   <projects type="array">
   #     <project>
   #       <amount type="decimal">20000.0</amount>
-  #       <customer-id type="integer">1567</customer-id>
+  #       <choice-id type="integer">1567</choice-id>
   #       <deal-date type="date">2008-04-09</deal-date>
   #       ...
   #     </project>
   #     <project>
   #       <amount type="decimal">57230.0</amount>
-  #       <customer-id type="integer">1567</customer-id>
+  #       <choice-id type="integer">1567</choice-id>
   #       <deal-date type="date">2008-04-15</deal-date>
   #       ...
   #     </project>
@@ -155,7 +155,7 @@ class Array
   #
   # To ensure a meaningful root element use the <tt>:root</tt> option:
   #
-  #   customer_with_no_projects.projects.to_xml(root: 'projects')
+  #   choice_with_no_projects.projects.to_xml(root: 'projects')
   #
   #   <?xml version="1.0" encoding="UTF-8"?>
   #   <projects type="array"/>

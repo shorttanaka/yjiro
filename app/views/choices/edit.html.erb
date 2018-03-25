@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>(都合よく)編集するの?</h1>
+    <%= render partial: 'form', locals: { choice: @choice } %>
+    <button type="button" style="margin-top:5px;" class="btn btn-default" data-toggle="modal" data-target="#delete-choice">削す</button>
+    <%= link_to '戻る', choice_path(@choice),  style: "margin-top:5px;", class: "btn btn-default" %>
+  </div>
+</div>
+
+<div class="modal fade" id="delete-choice">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">削す</h4>
+      </div>
+      <div class="modal-body">
+        <p><%= @choice.choice_a %>を削すの？</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+        <%= link_to '削す', @choice, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

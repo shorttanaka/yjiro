@@ -155,8 +155,8 @@ Capybara::SpecHelper.spec "node" do
   describe "#disabled?" do
     it "should extract disabled node" do
       @session.visit('/form')
-      expect(@session.find('//input[@id="customer_name"]')).to be_disabled
-      expect(@session.find('//input[@id="customer_email"]')).not_to be_disabled
+      expect(@session.find('//input[@id="choice_name"]')).to be_disabled
+      expect(@session.find('//input[@id="choice_email"]')).not_to be_disabled
     end
 
     it "should see disabled options as disabled" do

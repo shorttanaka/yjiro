@@ -32,14 +32,14 @@ module ActiveRecord
       # existing object) and how it can be turned back into attributes (when the entity is saved to
       # the database).
       #
-      #   class Customer < ActiveRecord::Base
+      #   class Choice < ActiveRecord::Base
       #     composed_of :balance, class_name: "Money", mapping: %w(amount currency)
       #     composed_of :address, mapping: [ %w(address_street street), %w(address_city city) ]
       #   end
       #
-      # The customer class now has the following methods to manipulate the value objects:
-      # * <tt>Customer#balance, Customer#balance=(money)</tt>
-      # * <tt>Customer#address, Customer#address=(address)</tt>
+      # The choice class now has the following methods to manipulate the value objects:
+      # * <tt>Choice#balance, Choice#balance=(money)</tt>
+      # * <tt>Choice#address, Choice#address=(address)</tt>
       #
       # These methods will operate with value objects like the ones described below:
       #
@@ -90,30 +90,30 @@ module ActiveRecord
       # access that attribute. That's the case with our +balance+ attribute. You interact with the value
       # objects just like you would with any other attribute:
       #
-      #   customer.balance = Money.new(20)     # sets the Money value object and the attribute
-      #   customer.balance                     # => Money value object
-      #   customer.balance.exchange_to("DKK")  # => Money.new(120, "DKK")
-      #   customer.balance > Money.new(10)     # => true
-      #   customer.balance == Money.new(20)    # => true
-      #   customer.balance < Money.new(5)      # => false
+      #   choice.balance = Money.new(20)     # sets the Money value object and the attribute
+      #   choice.balance                     # => Money value object
+      #   choice.balance.exchange_to("DKK")  # => Money.new(120, "DKK")
+      #   choice.balance > Money.new(10)     # => true
+      #   choice.balance == Money.new(20)    # => true
+      #   choice.balance < Money.new(5)      # => false
       #
       # Value objects can also be composed of multiple attributes, such as the case of Address. The order
       # of the mappings will determine the order of the parameters.
       #
-      #   customer.address_street = "Hyancintvej"
-      #   customer.address_city   = "Copenhagen"
-      #   customer.address        # => Address.new("Hyancintvej", "Copenhagen")
+      #   choice.address_street = "Hyancintvej"
+      #   choice.address_city   = "Copenhagen"
+      #   choice.address        # => Address.new("Hyancintvej", "Copenhagen")
       #
-      #   customer.address = Address.new("May Street", "Chicago")
-      #   customer.address_street # => "May Street"
-      #   customer.address_city   # => "Chicago"
+      #   choice.address = Address.new("May Street", "Chicago")
+      #   choice.address_street # => "May Street"
+      #   choice.address_city   # => "Chicago"
       #
       # == Writing value objects
       #
       # Value objects are immutable and interchangeable objects that represent a given value, such as
       # a Money object representing $5. Two Money objects both representing $5 should be equal (through
       # methods such as <tt>==</tt> and <tt><=></tt> from Comparable if ranking makes sense). This is
-      # unlike entity objects where equality is determined by identity. An entity class such as Customer can
+      # unlike entity objects where equality is determined by identity. An entity class such as Choice can
       # easily have two different objects that both have an address on Hyancintvej. Entity identity is
       # determined by object or relational unique identifiers (such as primary keys). Normal
       # ActiveRecord::Base classes are entity objects.
@@ -175,9 +175,9 @@ module ActiveRecord
       #
       # Once a #composed_of relationship is specified for a model, records can be loaded from the database
       # by specifying an instance of the value object in the conditions hash. The following example
-      # finds all customers with +balance_amount+ equal to 20 and +balance_currency+ equal to "USD":
+      # finds all choices with +balance_amount+ equal to 20 and +balance_currency+ equal to "USD":
       #
-      #   Customer.where(balance: Money.new(20, "USD"))
+      #   Choice.where(balance: Money.new(20, "USD"))
       #
       module ClassMethods
         # Adds reader and writer methods for manipulating a value object:

@@ -349,8 +349,8 @@ module ActiveRecord
     #
     # ==== Examples
     #
-    #   # Update all customers with the given attributes
-    #   Customer.update_all wants_email: true
+    #   # Update all choices with the given attributes
+    #   Choice.update_all wants_email: true
     #
     #   # Update all books with 'Rails' in their title
     #   Book.where('title LIKE ?', '%Rails%').update_all(author: 'David')

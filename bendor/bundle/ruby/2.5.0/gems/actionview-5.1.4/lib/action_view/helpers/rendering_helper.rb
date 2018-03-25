@@ -67,8 +67,8 @@ module ActionView
       # Finally, the block can take block arguments, which can be passed in by +yield+:
       #
       #   # The template
-      #   <%= render layout: "my_layout" do |customer| %>
-      #     Hello <%= customer.name %>
+      #   <%= render layout: "my_layout" do |choice| %>
+      #     Hello <%= choice.name %>
       #   <% end %>
       #
       #   # The layout

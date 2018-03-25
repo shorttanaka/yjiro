@@ -5,7 +5,7 @@ Capybara::SpecHelper.spec Capybara::Selector do
 
   describe ":label selector" do
     it "finds a label by text" do
-      expect(@session.find(:label, 'Customer Name').text).to eq 'Customer Name'
+      expect(@session.find(:label, 'Choice Name').text).to eq 'Choice Name'
     end
 
     it "finds a label by for attribute string" do
@@ -28,18 +28,18 @@ Capybara::SpecHelper.spec Capybara::Selector do
 
     context "with exact option" do
       it "matches substrings" do
-        expect(@session.find(:label, 'Customer Na', exact: false).text).to eq 'Customer Name'
+        expect(@session.find(:label, 'Choice Na', exact: false).text).to eq 'Choice Name'
       end
 
       it "doesn't match substrings" do
-        expect { @session.find(:label, 'Customer Na', exact: true) }.to raise_error(Capybara::ElementNotFound)
+        expect { @session.find(:label, 'Choice Na', exact: true) }.to raise_error(Capybara::ElementNotFound)
       end
     end
   end
 
   describe "field selectors" do
     it "can find specifically by id" do
-      expect(@session.find(:field, id: 'customer_email').value).to eq "ben@ben.com"
+      expect(@session.find(:field, id: 'choice_email').value).to eq "ben@ben.com"
     end
 
     it "can find specifically by name" do
